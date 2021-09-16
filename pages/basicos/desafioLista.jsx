@@ -1,19 +1,23 @@
 export default function desafio() {
-
-  const spanDesafio = () => {
-    let spanPrint = ""
-    
-    for(let i=0; i<=10; i++) {
-       spanPrint += `<span>${i}, </span>`
-    }
-    
-    return spanPrint;
-  }
-
-  return (
+  return  (
     <div>
-      {spanDesafio()}
+      <div>
+        {gerarLista()}
+      </div>
+      <div>
+        {gerarLista(3)}
+      </div>
     </div>
   )
+}
 
+
+const gerarLista = (final = 10) => {
+  let lista = []
+
+  for(let i=1; i<=final; i++) {
+    lista.push(<span>{i},</span>)
+  }
+
+  return lista;
 }
